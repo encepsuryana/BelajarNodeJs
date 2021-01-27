@@ -13,4 +13,4 @@ connection.connect(error => {
     console.log('Sukses terkoneksi dengan Database');
 });
 
-exports.connection = connection;
+module.exports = connection;

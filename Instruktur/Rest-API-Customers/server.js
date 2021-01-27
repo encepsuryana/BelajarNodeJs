@@ -7,10 +7,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-
-
-
-
 // app.use(function (req, res, next) {
 //    console.log('Time', Date.now());
 //    next(); 
@@ -34,7 +30,9 @@ app.get('/', function (req, res) {
 
 // 
 
-let port = 3000;
+require('./app/routes/customers.routes')(app);
+
+const port = 3000;
 app.listen(port, function () {
    console.log('Server Berjalan pada port : ' + port); 
 });

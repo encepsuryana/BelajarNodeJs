@@ -9,7 +9,7 @@ const Customer = function (customer) {
 };
 
 Customer.create = (newCustomer, result) => {
-    let sql_query = 'INSERT INTO customer SET ?';
+    let sql_query = `INSERT INTO customers SET ?`;
     sql.query(sql_query, newCustomer, (err, res) => {
         if (err) {
             console.log('Error: ', err);
@@ -23,7 +23,7 @@ Customer.create = (newCustomer, result) => {
 };
 
 Customer.findById = (customerId, result) => {
-    let sql_query = 'SELECT * FROM customers WHERE id = ${customerId}';
+    let sql_query = `SELECT * FROM customers WHERE id = ${customerId}`;
     sql.query(sql_query, (err, res) => {
         if (err) {
             console.log('Error: ', err);
@@ -32,7 +32,7 @@ Customer.findById = (customerId, result) => {
         }
 
         // Jika Data ditemukan
-        if (res.length) {
+        if (res) {
             console.log('Customer ditemukan: ', res[0]);
             result(null, res[0]);
             return;
@@ -44,7 +44,7 @@ Customer.findById = (customerId, result) => {
 }
 
 Customer.getAll = result => {
-    let sql_query = 'SELECT * FROM customers';
+    let sql_query = `SELECT * FROM customers`;
     sql.query(sql_query, (err, res) => {
         if (err) {
             console.log('Error: ', err);
@@ -58,7 +58,7 @@ Customer.getAll = result => {
 };
 
 Customer.updateById = (id, customer, result) => {
-    let sql_query = 'UPDATE customers SET email = ?, nama_lengkap = ?, aktif = ? WHERE id = ?';
+    let sql_query = `UPDATE customers SET email = ?, nama_lengkap = ?, aktif = ? WHERE id = ?`;
     sql.query(sql_query, [customer.email, customer.nama_lengkap, customer.aktif, id], (err, res) =>{
         if(err) {
             console.log('Error: ', err);
@@ -79,7 +79,7 @@ Customer.updateById = (id, customer, result) => {
 };
 
 Customer.remove = (id, result) => {
-    let sql_query = 'DELETE FROM customers WHERE id = ?';
+    let sql_query = `DELETE FROM customers WHERE id = ?`;
     sql.query(sql_query, id, (err, res) =>{
         if(err) {
             console.log('Error: ', err);
@@ -100,7 +100,7 @@ Customer.remove = (id, result) => {
 };
 
 Customer.removeAll = result => {
-    let sql_query = 'DELETE FROM customers';
+    let sql_query = `TRUNCATE TABLE customers`;
     sql.query(sql_query, (err, res) =>{
         if(err) {
             console.log('Error: ', err);
@@ -108,11 +108,10 @@ Customer.removeAll = result => {
             return;
         }
 
-    
         // Jika data ditemukan dan berhasil di hapus
-        console.log('Hapus data custumers ${res.affectedRows}');
+        console.log(`${res.affectedRows} Data custumers telah dihapus!`);
         result(null, res);
     });
 };
 
-exports.module = Customer;
+module.exports = Customer;
