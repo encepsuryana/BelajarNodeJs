@@ -12,6 +12,7 @@ koneksi.connect(function (err){
         console.log('Koneksi Error!' + err.stack);
         return;
     }
+   
 
     console.log('Koneksi database berhasil!');
 
