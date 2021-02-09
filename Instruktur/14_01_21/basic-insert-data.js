@@ -14,7 +14,8 @@ connection.connect(function(err) {
 
     console.log('Koneksi Database Success!');
 
-    var sql = "INSERT INTO module(title, description) VALUES('NodeJs Introduction', 'Pengenalan tentang NodeJs')";
+    var sql = `INSERT INTO module(title, description)
+                VALUES('NodeJs Introduction', 'Pengenalan tentang NodeJs')`;
     connection.query(sql, function(err, result) {
         if(err) {
             throw err;
