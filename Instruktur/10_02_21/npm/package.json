@@ -1,0 +1,28 @@
+{
+  "name": "restapi",
+  "version": "2.0.1",
+  "description": "web server babastudio.com",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encepsuryana/BelajarNodeJs.git"
+  },
+  "keywords": [
+    "restapi",
+    "expressjs",
+    "mysql",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Instruktur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/encepsuryana/BelajarNodeJs/issues"
+  },
+  "homepage": "https://github.com/encepsuryana/BelajarNodeJs#readme"
+}
