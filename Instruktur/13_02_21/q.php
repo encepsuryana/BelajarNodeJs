@@ -1,0 +1,1 @@
+var data1 = result_query.... var data2 = result_query2 console.log(req); res.render('admin/login', { title: 'Login', data1: data1, data2: data2}); 
