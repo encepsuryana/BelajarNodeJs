@@ -35,3 +35,10 @@ const port = 8080;
 app.listen(port, function(){
     console.log('Server Running di port: ' + port);
 });
+
+
+
+// SELECT JSON_OBJECT('title',title,'created_at',
+//                     DATE_FORMAT(created_at, "%Y-%c-%d %H:%i:%s")) AS title_json 
+//   FROM titles 
+//  WHERE id = 1;
