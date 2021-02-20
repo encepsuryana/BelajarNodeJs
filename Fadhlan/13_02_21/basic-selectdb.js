@@ -15,7 +15,7 @@ conn.connect((err, res) => {
     }
 
     // console.log('connected: '+conn.threadId)
-    var query = `SELECT * FROM customer`
+    var query = `SELECT DATE_FORMAT(created_at, '%Y-%c-%d %H:%i:%s') AS title_json FROM customer`
     conn.query(query,(err, res,fields) => {
         if(err) {
             
@@ -27,6 +27,7 @@ conn.connect((err, res) => {
         }
         console.log('== val ==')
         console.log(res)
+        // console.log(DATE_FORMAT)
         conn.destroy()
 
     })
