@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "db-server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ming thai",
+  "license": "ISC",
+  "description": "Server Node Js with Mysql Express Bodyparser ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/encepsuryana/BelajarNodeJs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/encepsuryana/BelajarNodeJs/issues"
+  },
+  "homepage": "https://github.com/encepsuryana/BelajarNodeJs#readme"
+}
