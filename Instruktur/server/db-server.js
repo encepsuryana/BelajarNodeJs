@@ -1,28 +1,54 @@
-var mysql = require('mysql');
+var mysql = require("mysql");
 
 var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: ''
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "nodejs",
 });
 
 conn.connect(function (err) {
-    if(err) {
-        console.error('Koneksi Error: ' + err.stack);
-        return;
+  if (err) {
+    console.error("Koneksi Error: " + err.stack);
+    return;
+  }
+
+  console.log("Terkoneksi dengan ID: " + conn.threadId);
+
+  // VAR CREATE DATABASE
+  // //Variable Database
+  // let data_query = 'Database Node JS';
+
+  // // Query Create Database
+  // let query = `CREATE DATABASE nodejs`;
+
+  //   //VAR CREATE TABLE
+  //   //Variable Database
+  //   let data_query = "Table Module";
+
+  //   // Query Create Table
+  //   let query = `CREATE TABLE module(
+  //                 title VARCHAR(255),
+  //                 description VARCHAR(255)
+  //   )`;
+
+  //VAR INSERT VALUE
+  //Variable Database
+  let data_query = "1 Value";
+
+  // Query Insert Value
+  let query = `INSERT INTO module(title, description)
+                      VALUES('Node js', 'Dasar dasar Node Js'),
+                            ('Node js 1', 'Dasar dasar Node Js 1'),
+                            ('Node js 2', 'Dasar dasar Node Js 2')`;
+
+
+  conn.query(query, function (err, result) {
+    if (err) {
+      throw err;
     }
 
-    // Create Database
-    console.log('Terkoneksi dengan ID: ' + conn.threadId);
-    
-    let query = `CREATE DATABASE nodejs`;
-    
-    conn.query(query, function(err, result) {
-        if(err) {
-            throw(err);
-        }
-
-        console.log('Database Node JS telah dibuat!');
-        conn.destroy();
-    })
+    console.log(data_query + " telah dibuat!");
+    conn.destroy();
+  });
 });
